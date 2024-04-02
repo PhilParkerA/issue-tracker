@@ -3,12 +3,12 @@ import ErrorMessage from "@/app/components/ErrorMessage";
 import Spinner from "@/app/components/Spinner";
 import { createIssueSchema } from "@/app/validationSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Button, Callout, TextField } from "@radix-ui/themes";
+import { Box, Button, Callout, TextField } from "@radix-ui/themes";
 import axios from "axios";
 import "easymde/dist/easymde.min.css";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { Controller, FieldValues, useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import SimpleMDE from "react-simplemde-editor";
 import { z } from "zod";
 
@@ -40,7 +40,7 @@ const NewIssuePage = () => {
   });
 
   return (
-    <div className="max-w-xl">
+    <Box className="max-w-xl">
       {error && (
         <Callout.Root color="red" className="mb-5">
           <Callout.Text>{error}</Callout.Text>
@@ -63,7 +63,7 @@ const NewIssuePage = () => {
           Submit New Issue {isSubmitting && <Spinner />}
         </Button>
       </form>
-    </div>
+    </Box>
   );
 };
 
