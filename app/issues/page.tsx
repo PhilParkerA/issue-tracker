@@ -6,7 +6,7 @@ import { IssueStatusBadge, Link } from "../components";
 
 const IssuesPage = async () => {
   const issues = await prisma.issue.findMany();
-  
+
   return (
     <div>
       <IssueActions />
@@ -44,5 +44,7 @@ const IssuesPage = async () => {
     </div>
   );
 };
+
+export const dynamic = "force-dynamic";
 
 export default IssuesPage;
