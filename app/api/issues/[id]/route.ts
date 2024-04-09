@@ -1,6 +1,5 @@
 import { createIssueSchema } from "@/app/validationSchema";
 import prisma from "@/prisma/client";
-import { Issue } from "@prisma/client";
 import { NextRequest, NextResponse } from "next/server";
 
 interface Props {
