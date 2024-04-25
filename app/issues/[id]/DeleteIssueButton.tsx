@@ -29,7 +29,10 @@ const DeleteIssueButton = ({ issueId }: Props) => {
     <>
       <AlertDialog.Root>
         <AlertDialog.Trigger>
-          <Button color="red" disabled={isDeleting}>
+          <Button
+            className="!bg-red-500 !cursor-pointer hover:!bg-red-600"
+            disabled={isDeleting}
+          >
             Delete Issue {isDeleting && <Spinner />}
           </Button>
         </AlertDialog.Trigger>
