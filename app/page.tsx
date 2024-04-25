@@ -4,11 +4,7 @@ import LatestIssues from "./LatestIssues";
 import IssueChart from "./IssueChart";
 import { Flex, Grid } from "@radix-ui/themes";
 
-interface Props {
-  searchParams: { page: string };
-}
-
-export default async function Home({ searchParams }: Props) {
+export default async function Home() {
   const openIssues = await prisma.issue.count({ where: { status: "OPEN" } });
   const closedIssues = await prisma.issue.count({
     where: { status: "CLOSED" },
@@ -16,7 +12,6 @@ export default async function Home({ searchParams }: Props) {
   const inProgressIssues = await prisma.issue.count({
     where: { status: "IN_PROGRESS" },
   });
-  // return <LatestIssues />;
 
   const issueProps = {
     closed: closedIssues,
